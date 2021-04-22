@@ -9,7 +9,8 @@ The easiest install is to download the release for your operating system
 and architecture and run it.
 
 ```bash
-curl -fsSL https://github.com/shakefu/home/releases/download/v1.1.2/home-v1.1.2-darwin-amd64.tar.gz | tar xz > home
+export VERSION=1.2.0
+curl -fsSL https://github.com/shakefu/home/releases/download/v${VERSION}/home-v${VERSION}-darwin-amd64.tar.gz | tar xz > home
 ./home setup
 ```
 
