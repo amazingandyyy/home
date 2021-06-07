@@ -305,7 +305,7 @@ _echo_blue () { printf "\033[1;34m%s\033[0m\n" "$*"; }
 
 # Really specific usage of `exa` that I like
 function ll {
-    local ignore=".git|.terraform|.DS_Store|.idea|.vs_code"
+    local ignore="*/.git/*|.git|.terraform|.DS_Store|.idea|.vs_code|.git/"
     local args=(
         --tree
         --ignore-glob \'$ignore\'
