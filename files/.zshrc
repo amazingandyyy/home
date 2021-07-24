@@ -252,8 +252,9 @@ alias nocolor='sed -E "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 # Use MacVim GUI
 # alias vim='mvim --remote-tab-silent'
 # Use colorized versions of less and more
-alias less='cless'
-alias more='cless'
+# Commented out because these fight with `delta` which is a nice git pager
+# alias less='cless'
+# alias more='cless'
 # Nice tree output
 alias tree='tree --noreport --matchdirs -a -C -x -I ".git" -L 2'
 
@@ -264,8 +265,11 @@ alias dc='docker-compose'
 alias gpull='git pull --no-edit --prune --all --verbose'
 alias gundo='git reset --soft "HEAD^"'
 alias gunstage='git reset --'
-alias gstaged='git difftool --staged'
-alias gdiff='git difftool'
+# This stomps on using delta as the diff pager
+# alias gstaged='git difftool --staged'
+# alias gdiff='git difftool'
+alias gstaged='git diff --staged'
+alias gdiff='git diff'
 # alias gcom='git commit -m'  # Move to function
 alias gadd='git add'
 # alias gcheck='git checkout'  # Fights tab completion with gch
@@ -285,7 +289,7 @@ unalias gstall	# git stash --all
 
 # Remap some of them
 alias gbr='git branch'
-alias gsta='git difftool --staged'
+alias gsta='git diff --staged'
 
 # Remove other zsh aliases we don't want
 # These conflict with the ls plugin
